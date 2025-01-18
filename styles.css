@@ -1,0 +1,285 @@
+/* Reset CSS */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    background-color: #fff; /* Đặt nền trắng */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm bóng cho header */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Khoảng cách giữa logo và navigation */
+}
+
+.logo {
+    max-height: 50px; /* Kích thước tối đa của logo */
+    width: auto;
+}
+
+/* Navigation và Form tìm kiếm */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #333; /* Đổi màu chữ menu */
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0; /* Thay đổi màu nền khi hover */
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-form input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.search-form button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #0073e6;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #005bb5;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    margin: 20px;
+    gap: 20px;
+}
+
+.left-column {
+    flex: 3;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.news-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Grid layout for news articles */
+#news-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* News Article */
+.news-article {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-article:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.news-article h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.news-article p {
+    font-size: 16px;
+    color: #555;
+}
+
+.news-article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.news-article a {
+    margin-top: 10px;
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.news-article a:hover {
+    text-decoration: underline;
+}
+
+.news-article .source-name {
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* Right Column (Widgets) */
+.right-column {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.widget {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.widget h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.widget p, .widget ul {
+    font-size: 14px;
+    color: #555;
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.widget ul li {
+    margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #0073e6;
+    color: white;
+    margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Widget Image Styling */
+.widget img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Đặt bố cục dọc cho thiết bị nhỏ */
+    }
+
+    .right-column {
+        display: grid; /* Hiển thị lại cột phải dưới dạng lưới */
+        grid-template-columns: 1fr;
+        gap: 10px; /* Khoảng cách giữa các widget */
+    }
+
+    .widget {
+        display: none; /* Ẩn mặc định toàn bộ widget */
+    }
+
+    /* Hiển thị chỉ widget cụ thể trên di động */
+    .widget:first-child,  /* Widget thời tiết */
+    .widget:nth-child(3) { /* Widget bài viết nổi bật */
+        display: block; /* Hiển thị lại */
+    }
+
+    /* Chỉnh thanh tìm kiếm xuống dòng trên mobile */
+    nav {
+        flex-wrap: wrap; /* Cho phép các phần tử con xuống dòng khi không đủ không gian */
+    }
+
+    .search-form {
+        display: flex; /* Đảm bảo phần tử sử dụng Flexbox */
+        flex-direction: column !important; /* Ép buộc xuống dòng */
+        gap: 10px;
+        width: 100%; /* Đảm bảo chiếm toàn bộ chiều ngang */
+        margin-top: 10px; /* Thêm khoảng cách giữa menu và form tìm kiếm */
+    }
+
+    .search-form input, .search-form button {
+        width: 100% !important; /* Đảm bảo chiếm toàn bộ chiều ngang */
+    }
+
+    /* Chỉnh kích thước chữ phần thể loại để hiển thị trong giới hạn màn hình */
+    nav ul {
+        display: flex;
+        flex-wrap: wrap; /* Cho phép các mục nằm gọn trong màn hình */
+        justify-content: space-between;
+        gap: 5px;
+    }
+
+    nav ul li {
+        flex: 1 1 auto; /* Tự động điều chỉnh kích thước mục */
+        max-width: 33%; /* Đặt giới hạn tối đa để nằm trong màn hình */
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Giảm cỡ chữ */
+        white-space: nowrap; /* Ngăn chữ xuống dòng */
+        overflow: hidden; /* Ẩn nếu chữ quá dài */
+        text-overflow: ellipsis; /* Thêm dấu "..." nếu chữ bị cắt */
+    }
+}

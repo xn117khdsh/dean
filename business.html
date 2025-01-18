@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin tức Công nghệ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tin tức Công nghệ</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="technology.html">Công nghệ</a></li>
+                <li><a href="sports.html">Thể thao</a></li>
+                <li><a href="entertainment.html">Giải trí</a></li>
+                <li><a href="business.html">Kinh doanh</a></li>
+                <li><a href="health.html">Sức khỏe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bố cục chính -->
+    <div class="main-container">
+        <!-- Cột trái -->
+        <div class="left-column">
+            <section id="news-container">
+                <!-- Tin tức sẽ được hiển thị ở đây -->
+            </section>
+        </div>
+
+        <!-- Cột phải (Tiện ích) -->
+        <div class="right-column">
+            <div class="widget">
+                <h2>Thời tiết</h2>
+                <p>Hà Nội: 25°C, Nắng</p>
+                <p>TP.HCM: 30°C, Có mây</p>
+            </div>
+
+            <div class="widget">
+                <h2>Kết quả xổ số</h2>
+                <ul>
+                    <li>Miền Bắc: 12345</li>
+                    <li>Miền Trung: 67890</li>
+                    <li>Miền Nam: 54321</li>
+                </ul>
+            </div>
+
+            <!-- Nội dung khác (Bài viết nổi bật và Quảng cáo) -->
+            <div class="widget">
+                <h2>Bài viết nổi bật</h2>
+                <ul>
+                    <li><a href="#">Bài viết 1</a></li>
+                    <li><a href="#">Bài viết 2</a></li>
+                    <li><a href="#">Bài viết 3</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h2>Quảng cáo</h2>
+                <img src="advertisement.jpg" alt="Quảng cáo" />
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Báo Mạng</p>
+    </footer>
+
+    <!-- Tệp JavaScript -->
+    <script src="scripts.js"></script>
+    <script>
+        // Gọi hàm lấy tin tức cho thể loại "technology"
+        loadNews('business');
+    </script>
+</body>
+</html>
